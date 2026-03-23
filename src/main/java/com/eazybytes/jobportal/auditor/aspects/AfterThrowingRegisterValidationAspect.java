@@ -27,7 +27,7 @@ public class AfterThrowingRegisterValidationAspect {
     private final JobPortalUserRepository jobPortalUserRepository;
 
     @Before("""
-        execution(* com.eazybytes.jobportal.feature.user.controller.AuthController
+        execution(* com.eazybytes.jobportal.feature.auth.controller.AuthController
         .apiRegister(..))
         """)
     public void validateBeforeRegister(JoinPoint joinPoint) {
