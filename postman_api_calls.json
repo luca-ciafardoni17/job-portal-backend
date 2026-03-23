@@ -1,0 +1,1405 @@
+{
+  "info": {
+    "_postman_id": "9cb19f1e-d513-4e84-9881-4e7ebddbe027",
+    "name": "Job portal",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53183391",
+    "_collection_link": "https://go.postman.co/collection/53183391-9cb19f1e-d513-4e84-9881-4e7ebddbe027?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Login public (Job seeker)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XSRF-TOKEN",
+                "value": "4c75ca15-c8d1-4367-9167-a1c873f14e43",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"john@gmail.com\",\r\n    \"password\": \"EazyBytes@1803\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/auth/login/public",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "auth",
+                "login",
+                "public"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login public (Employer)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XSRF-TOKEN",
+                "value": "4c75ca15-c8d1-4367-9167-a1c873f14e43",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"sanjana@gmail.com\",\r\n    \"password\": \"EazyBytes@1803\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/auth/login/public",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "auth",
+                "login",
+                "public"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login public (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XSRF-TOKEN",
+                "value": "4c75ca15-c8d1-4367-9167-a1c873f14e43",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"admin@gmail.com\",\r\n    \"password\": \"EazyBytes@1803\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/auth/login/public",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "auth",
+                "login",
+                "public"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Register public",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XSRF-TOKEN",
+                "value": "1ce8ef46-52e4-416b-addb-d90c7fb45c16",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Admin\",\r\n    \"email\": \"aa@gmail.com\",\r\n    \"mobileNumber\": \"2123466789\",\r\n    \"password\": \"a\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/auth/register/public",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "auth",
+                "register",
+                "public"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CSRF token",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"admin@gmail.com\",\r\n    \"password\": \"EazyBytes@1803\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/csrf-token/public",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "csrf-token",
+                "public"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search user by email admin",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJKb2IgUG9ydGFsIiwic3ViIjoiSldUIFRva2VuIiwibmFtZSI6IkFkbWluIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJtb2JpbGVOdW1iZXIiOiIyMTIzNDU2Nzg5Iiwicm9sZXMiOiJST0xFX0FETUlOIiwiaWF0IjoxNzc0MTk1NjAzLCJleHAiOjE3NzQyODIwMDN9.zv3kYjsUo8F38xkM24JkkqqEydf9nDqMgotnNFb3jEw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-XSRF-TOKEN",
+                "value": "4c75ca15-c8d1-4367-9167-a1c873f14e43",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/users/search/admin?email=email@dominio.com",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "users",
+                "search",
+                "admin"
+              ],
+              "query": [
+                {
+                  "key": "email",
+                  "value": "email@dominio.com"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Elevate user to Employer admin",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJKb2IgUG9ydGFsIiwic3ViIjoiSldUIFRva2VuIiwibmFtZSI6IkFkbWluIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJtb2JpbGVOdW1iZXIiOiIyMTIzNDU2Nzg5Iiwicm9sZXMiOiJST0xFX0FETUlOIiwiaWF0IjoxNzc0MTk1NjAzLCJleHAiOjE3NzQyODIwMDN9.zv3kYjsUo8F38xkM24JkkqqEydf9nDqMgotnNFb3jEw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "X-XSRF-TOKEN",
+                "value": "4c75ca15-c8d1-4367-9167-a1c873f14e43",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/users/1/role/employer/admin",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "users",
+                "1",
+                "role",
+                "employer",
+                "admin"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Assign company to Employer admin",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJKb2IgUG9ydGFsIiwic3ViIjoiSldUIFRva2VuIiwibmFtZSI6IkFkbWluIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJtb2JpbGVOdW1iZXIiOiIyMTIzNDU2Nzg5Iiwicm9sZXMiOiJST0xFX0FETUlOIiwiaWF0IjoxNzc0MTk1NjAzLCJleHAiOjE3NzQyODIwMDN9.zv3kYjsUo8F38xkM24JkkqqEydf9nDqMgotnNFb3jEw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "X-XSRF-TOKEN",
+                "value": "4c75ca15-c8d1-4367-9167-a1c873f14e43",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/users/1/company/1/admin",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "users",
+                "1",
+                "company",
+                "1",
+                "admin"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Companies",
+      "item": [
+        {
+          "name": "All companies",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/companies/public",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "companies",
+                "public"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "All companies admin",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJKb2IgUG9ydGFsIiwic3ViIjoiSldUIFRva2VuIiwibmFtZSI6IkFkbWluIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJtb2JpbGVOdW1iZXIiOiIyMTIzNDU2Nzg5Iiwicm9sZXMiOiJST0xFX0FETUlOIiwiaWF0IjoxNzc0MTkxMDU3LCJleHAiOjE3NzQyNzc0NTd9.lzToud6md_WKXLPAcUd4d7Vknn-TQlVi9Az1lZdgAOs",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-XSRF-TOKEN",
+                "value": "4c75ca15-c8d1-4367-9167-a1c873f14e43",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/companies/admin",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "companies",
+                "admin"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create company admin",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJKb2IgUG9ydGFsIiwic3ViIjoiSldUIFRva2VuIiwibmFtZSI6IkFkbWluIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJtb2JpbGVOdW1iZXIiOiIyMTIzNDU2Nzg5Iiwicm9sZXMiOiJST0xFX0FETUlOIiwiaWF0IjoxNzc0MTkxMDU3LCJleHAiOjE3NzQyNzc0NTd9.lzToud6md_WKXLPAcUd4d7Vknn-TQlVi9Az1lZdgAOs",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XSRF-TOKEN",
+                "value": "4c75ca15-c8d1-4367-9167-a1c873f14e43",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Example company\",\r\n    \"logo\": \"some/logo.com\",\r\n    \"industry\": \"Technology\",\r\n    \"size\": \"Medium size\",\r\n    \"rating\": 3.5,\r\n    \"locations\": \"Rome,Poggibonsi\",\r\n    \"founded\": 2026,\r\n    \"description\": \"Very very long description\",\r\n    \"employees\": 271000,\r\n    \"website\": \"example/website.org\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/companies/admin",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "companies",
+                "admin"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update company admin",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJKb2IgUG9ydGFsIiwic3ViIjoiSldUIFRva2VuIiwibmFtZSI6IkFkbWluIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJtb2JpbGVOdW1iZXIiOiIyMTIzNDU2Nzg5Iiwicm9sZXMiOiJST0xFX0FETUlOIiwiaWF0IjoxNzc0MTkxMDU3LCJleHAiOjE3NzQyNzc0NTd9.lzToud6md_WKXLPAcUd4d7Vknn-TQlVi9Az1lZdgAOs",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "X-XSRF-TOKEN",
+                "value": "4c75ca15-c8d1-4367-9167-a1c873f14e43",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Example company new name\",\r\n    \"logo\": \"some/logo.com\",\r\n    \"industry\": \"Technology\",\r\n    \"size\": \"Medium size\",\r\n    \"rating\": 3.5,\r\n    \"locations\": \"Rome,Poggibonsi\",\r\n    \"founded\": 2026,\r\n    \"description\": \"Very very long description\",\r\n    \"employees\": 271000,\r\n    \"website\": \"example/website.org\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/companies/31/admin",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "companies",
+                "31",
+                "admin"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete company admin",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJKb2IgUG9ydGFsIiwic3ViIjoiSldUIFRva2VuIiwibmFtZSI6IkFkbWluIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJtb2JpbGVOdW1iZXIiOiIyMTIzNDU2Nzg5Iiwicm9sZXMiOiJST0xFX0FETUlOIiwiaWF0IjoxNzc0MTkxMDU3LCJleHAiOjE3NzQyNzc0NTd9.lzToud6md_WKXLPAcUd4d7Vknn-TQlVi9Az1lZdgAOs",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-XSRF-TOKEN",
+                "value": "4c75ca15-c8d1-4367-9167-a1c873f14e43",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Example company new name\",\r\n    \"logo\": \"some/logo.com\",\r\n    \"industry\": \"Technology\",\r\n    \"size\": \"Medium size\",\r\n    \"rating\": 3.5,\r\n    \"locations\": \"Rome,Poggibonsi\",\r\n    \"founded\": 2026,\r\n    \"description\": \"Very very long description\",\r\n    \"employees\": 271000,\r\n    \"website\": \"example/website.org\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/companies/38/admin",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "companies",
+                "38",
+                "admin"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Contacts",
+      "item": [
+        {
+          "name": "Get new contacts",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJKb2IgUG9ydGFsIiwic3ViIjoiSldUIFRva2VuIiwibmFtZSI6IkFkbWluIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJtb2JpbGVOdW1iZXIiOiIyMTIzNDU2Nzg5Iiwicm9sZXMiOiJST0xFX0FETUlOIiwiaWF0IjoxNzc0MjAwMDUzLCJleHAiOjE3NzQyODY0NTN9._31JnRil3eNiAunktuVhIAfn6ljVNbBwiBQ_O1PjQiM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-XSRF-TOKEN",
+                "value": "4c75ca15-c8d1-4367-9167-a1c873f14e43",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/contacts/admin",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "contacts",
+                "admin"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get new contacts sort",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJKb2IgUG9ydGFsIiwic3ViIjoiSldUIFRva2VuIiwibmFtZSI6IkFkbWluIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJtb2JpbGVOdW1iZXIiOiIyMTIzNDU2Nzg5Iiwicm9sZXMiOiJST0xFX0FETUlOIiwiaWF0IjoxNzc0MDQyMjI4LCJleHAiOjE3NzQxMjg2Mjh9.eYhaDsiZ_04vwyFbX1KNQukOvVQrwylGTvHoSjslBiQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-XSRF-TOKEN",
+                "value": "94de3bbd-f0d3-44a1-acbf-5271a6fb2ee0",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/contacts/sort/admin?sortBy=createdAt&sortDir=asc",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "contacts",
+                "sort",
+                "admin"
+              ],
+              "query": [
+                {
+                  "key": "sortBy",
+                  "value": "createdAt"
+                },
+                {
+                  "key": "sortDir",
+                  "value": "asc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get new contacts sort & pagination",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJKb2IgUG9ydGFsIiwic3ViIjoiSldUIFRva2VuIiwibmFtZSI6IkFkbWluIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJtb2JpbGVOdW1iZXIiOiIyMTIzNDU2Nzg5Iiwicm9sZXMiOiJST0xFX0FETUlOIiwiaWF0IjoxNzc0MDQyMjI4LCJleHAiOjE3NzQxMjg2Mjh9.eYhaDsiZ_04vwyFbX1KNQukOvVQrwylGTvHoSjslBiQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-XSRF-TOKEN",
+                "value": "94de3bbd-f0d3-44a1-acbf-5271a6fb2ee0",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/contacts/page/admin?sortBy=createdAt&sortDir=asc&pageNumber=0&pageSize=10",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "contacts",
+                "page",
+                "admin"
+              ],
+              "query": [
+                {
+                  "key": "sortBy",
+                  "value": "createdAt"
+                },
+                {
+                  "key": "sortDir",
+                  "value": "asc"
+                },
+                {
+                  "key": "pageNumber",
+                  "value": "0"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Change contact msg status",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJKb2IgUG9ydGFsIiwic3ViIjoiSldUIFRva2VuIiwibmFtZSI6IkFkbWluIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJtb2JpbGVOdW1iZXIiOiIyMTIzNDU2Nzg5Iiwicm9sZXMiOiJST0xFX0FETUlOIiwiaWF0IjoxNzc0MDQyMjI4LCJleHAiOjE3NzQxMjg2Mjh9.eYhaDsiZ_04vwyFbX1KNQukOvVQrwylGTvHoSjslBiQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "X-XSRF-TOKEN",
+                "value": "94de3bbd-f0d3-44a1-acbf-5271a6fb2ee0",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/contacts/10/status/admin",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "contacts",
+                "10",
+                "status",
+                "admin"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Jobs",
+      "item": [
+        {
+          "name": "Get all jobs employer",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJKb2IgUG9ydGFsIiwic3ViIjoiSldUIFRva2VuIiwibmFtZSI6IkVtcGxveWVyIiwiZW1haWwiOiJzYW5qYW5hQGdtYWlsLmNvbSIsIm1vYmlsZU51bWJlciI6IjAxMjM0NTY3ODkiLCJyb2xlcyI6IlJPTEVfRU1QTE9ZRVIiLCJpYXQiOjE3NzQyMDM0NTAsImV4cCI6MTc3NDI4OTg1MH0._D-gGZxySOm9dorsR4vvziuxTKFie9iSbsVJ2PoCTWE",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-XSRF-TOKEN",
+                "value": "4c75ca15-c8d1-4367-9167-a1c873f14e43",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/jobs/employer",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "jobs",
+                "employer"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get all jobs employer",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJKb2IgUG9ydGFsIiwic3ViIjoiSldUIFRva2VuIiwibmFtZSI6IkVtcGxveWVyIiwiZW1haWwiOiJzYW5qYW5hQGdtYWlsLmNvbSIsIm1vYmlsZU51bWJlciI6IjAxMjM0NTY3ODkiLCJyb2xlcyI6IlJPTEVfRU1QTE9ZRVIiLCJpYXQiOjE3NzQyMDM0NTAsImV4cCI6MTc3NDI4OTg1MH0._D-gGZxySOm9dorsR4vvziuxTKFie9iSbsVJ2PoCTWE",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XSRF-TOKEN",
+                "value": "4c75ca15-c8d1-4367-9167-a1c873f14e43",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Backend Developer\",\r\n  \"location\": \"Milano, Italia\",\r\n  \"workType\": \"Hybrid\",\r\n  \"jobType\": \"Full-time\",\r\n  \"category\": \"IT\",\r\n  \"experienceLevel\": \"Mid-level\",\r\n  \"salaryMin\": 30000.00,\r\n  \"salaryMax\": 50000.00,\r\n  \"salaryCurrency\": \"EUR\",\r\n  \"salaryPeriod\": \"YEAR\",\r\n  \"description\": \"Sviluppo e manutenzione di API REST con Java e Spring Boot.\",\r\n  \"requirements\": \"Esperienza con Java, Spring Boot, SQL.\",\r\n  \"benefits\": \"Smart working, buoni pasto, assicurazione sanitaria.\",\r\n  \"applicationsCount\": 10,\r\n  \"featured\": true,\r\n  \"urgent\": false,\r\n  \"remote\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/jobs/employer",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "jobs",
+                "employer"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update job employer",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJKb2IgUG9ydGFsIiwic3ViIjoiSldUIFRva2VuIiwibmFtZSI6IkVtcGxveWVyIiwiZW1haWwiOiJzYW5qYW5hQGdtYWlsLmNvbSIsIm1vYmlsZU51bWJlciI6IjAxMjM0NTY3ODkiLCJyb2xlcyI6IlJPTEVfRU1QTE9ZRVIiLCJpYXQiOjE3NzQyMDM0NTAsImV4cCI6MTc3NDI4OTg1MH0._D-gGZxySOm9dorsR4vvziuxTKFie9iSbsVJ2PoCTWE",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "X-XSRF-TOKEN",
+                "value": "4c75ca15-c8d1-4367-9167-a1c873f14e43",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"status\": \"ACTIVE\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/jobs/1002/status/employer",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "jobs",
+                "1002",
+                "status",
+                "employer"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Profiles",
+      "item": [
+        {
+          "name": "Create/Update profile jobseeker",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJKb2IgUG9ydGFsIiwic3ViIjoiSldUIFRva2VuIiwibmFtZSI6IkpvYiBTZWVrZXIiLCJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwibW9iaWxlTnVtYmVyIjoiMTEyMzQ1Njc4OSIsInJvbGVzIjoiUk9MRV9KT0JfU0VFS0VSIiwiaWF0IjoxNzc0MjEzNDg0LCJleHAiOjE3NzQyOTk4ODR9.VrSGxrmQoa15m1FUFlbq5bV1hIiKTbOxi6REWUdjd3w",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "X-XSRF-TOKEN",
+                "value": "4c75ca15-c8d1-4367-9167-a1c873f14e43",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "profile",
+                  "value": "{\n  \"jobTitle\": \"Backend Developer\",\n  \"location\": \"Milano, Italia\",\n  \"experienceLevel\": \"Mid-level\",\n  \"professionalBio\": \"Sviluppatore backend con esperienza in Java e Spring Boot.\",\n  \"portfolioWebsite\": \"https://portfolio.example.com\"\n}",
+                  "type": "text",
+                  "uuid": "84c8d1f0-0015-4b00-a8b2-f81b43b48bf9"
+                },
+                {
+                  "key": "profilePicture",
+                  "type": "file",
+                  "uuid": "ed624dbf-dcc8-4754-92d5-fc237c564621",
+                  "src": "/C:/Users/Lumca/Downloads/4f93139faa396223.png"
+                },
+                {
+                  "key": "resume",
+                  "type": "file",
+                  "uuid": "bcaccdbc-19f7-4173-b406-1f437d16a3f2",
+                  "src": "/C:/Users/Lumca/Downloads/4f93139faa396223.png"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/users/profile/jobseeker",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "users",
+                "profile",
+                "jobseeker"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get profile jobseeker",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJKb2IgUG9ydGFsIiwic3ViIjoiSldUIFRva2VuIiwibmFtZSI6IkpvYiBTZWVrZXIiLCJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwibW9iaWxlTnVtYmVyIjoiMTEyMzQ1Njc4OSIsInJvbGVzIjoiUk9MRV9KT0JfU0VFS0VSIiwiaWF0IjoxNzc0MjEzNDg0LCJleHAiOjE3NzQyOTk4ODR9.VrSGxrmQoa15m1FUFlbq5bV1hIiKTbOxi6REWUdjd3w",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-XSRF-TOKEN",
+                "value": "4c75ca15-c8d1-4367-9167-a1c873f14e43",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/users/profile/jobseeker",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "users",
+                "profile",
+                "jobseeker"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get profile picture jobseeker",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJKb2IgUG9ydGFsIiwic3ViIjoiSldUIFRva2VuIiwibmFtZSI6IkpvYiBTZWVrZXIiLCJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwibW9iaWxlTnVtYmVyIjoiMTEyMzQ1Njc4OSIsInJvbGVzIjoiUk9MRV9KT0JfU0VFS0VSIiwiaWF0IjoxNzc0MjEzNDg0LCJleHAiOjE3NzQyOTk4ODR9.VrSGxrmQoa15m1FUFlbq5bV1hIiKTbOxi6REWUdjd3w",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-XSRF-TOKEN",
+                "value": "4c75ca15-c8d1-4367-9167-a1c873f14e43",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/users/profile/picture/jobseeker",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "users",
+                "profile",
+                "picture",
+                "jobseeker"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get profile resume jobseeker",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJKb2IgUG9ydGFsIiwic3ViIjoiSldUIFRva2VuIiwibmFtZSI6IkpvYiBTZWVrZXIiLCJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwibW9iaWxlTnVtYmVyIjoiMTEyMzQ1Njc4OSIsInJvbGVzIjoiUk9MRV9KT0JfU0VFS0VSIiwiaWF0IjoxNzc0MjEzNDg0LCJleHAiOjE3NzQyOTk4ODR9.VrSGxrmQoa15m1FUFlbq5bV1hIiKTbOxi6REWUdjd3w",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-XSRF-TOKEN",
+                "value": "4c75ca15-c8d1-4367-9167-a1c873f14e43",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/users/profile/resume/jobseeker",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "users",
+                "profile",
+                "resume",
+                "jobseeker"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Saved jobs",
+      "item": [
+        {
+          "name": "Get saved jobs jobseeker",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJKb2IgUG9ydGFsIiwic3ViIjoiSldUIFRva2VuIiwibmFtZSI6IkpvYiBTZWVrZXIiLCJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwibW9iaWxlTnVtYmVyIjoiMTEyMzQ1Njc4OSIsInJvbGVzIjoiUk9MRV9KT0JfU0VFS0VSIiwiaWF0IjoxNzc0MjEzNDg0LCJleHAiOjE3NzQyOTk4ODR9.VrSGxrmQoa15m1FUFlbq5bV1hIiKTbOxi6REWUdjd3w",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-XSRF-TOKEN",
+                "value": "4c75ca15-c8d1-4367-9167-a1c873f14e43",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/users/saved-jobs/jobseeker",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "users",
+                "saved-jobs",
+                "jobseeker"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Save a job jobseeker",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJKb2IgUG9ydGFsIiwic3ViIjoiSldUIFRva2VuIiwibmFtZSI6IkpvYiBTZWVrZXIiLCJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwibW9iaWxlTnVtYmVyIjoiMTEyMzQ1Njc4OSIsInJvbGVzIjoiUk9MRV9KT0JfU0VFS0VSIiwiaWF0IjoxNzc0MjEzNDg0LCJleHAiOjE3NzQyOTk4ODR9.VrSGxrmQoa15m1FUFlbq5bV1hIiKTbOxi6REWUdjd3w",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XSRF-TOKEN",
+                "value": "4c75ca15-c8d1-4367-9167-a1c873f14e43",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/users/saved-jobs/3/jobseeker",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "users",
+                "saved-jobs",
+                "3",
+                "jobseeker"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Unsave a job jobseeker",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJKb2IgUG9ydGFsIiwic3ViIjoiSldUIFRva2VuIiwibmFtZSI6IkpvYiBTZWVrZXIiLCJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwibW9iaWxlTnVtYmVyIjoiMTEyMzQ1Njc4OSIsInJvbGVzIjoiUk9MRV9KT0JfU0VFS0VSIiwiaWF0IjoxNzc0MjEzNDg0LCJleHAiOjE3NzQyOTk4ODR9.VrSGxrmQoa15m1FUFlbq5bV1hIiKTbOxi6REWUdjd3w",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-XSRF-TOKEN",
+                "value": "4c75ca15-c8d1-4367-9167-a1c873f14e43",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/users/saved-jobs/1/jobseeker",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "users",
+                "saved-jobs",
+                "1",
+                "jobseeker"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Job applications",
+      "item": [
+        {
+          "name": "Get all job applications jobseeker",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJKb2IgUG9ydGFsIiwic3ViIjoiSldUIFRva2VuIiwibmFtZSI6IkpvYiBTZWVrZXIiLCJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwibW9iaWxlTnVtYmVyIjoiMTEyMzQ1Njc4OSIsInJvbGVzIjoiUk9MRV9KT0JfU0VFS0VSIiwiaWF0IjoxNzc0MjEzNDg0LCJleHAiOjE3NzQyOTk4ODR9.VrSGxrmQoa15m1FUFlbq5bV1hIiKTbOxi6REWUdjd3w",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-XSRF-TOKEN",
+                "value": "4c75ca15-c8d1-4367-9167-a1c873f14e43",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/users/job-applications/jobseeker",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "users",
+                "job-applications",
+                "jobseeker"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Apply for a job jobseeker",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJKb2IgUG9ydGFsIiwic3ViIjoiSldUIFRva2VuIiwibmFtZSI6IkpvYiBTZWVrZXIiLCJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwibW9iaWxlTnVtYmVyIjoiMTEyMzQ1Njc4OSIsInJvbGVzIjoiUk9MRV9KT0JfU0VFS0VSIiwiaWF0IjoxNzc0MjEzNDg0LCJleHAiOjE3NzQyOTk4ODR9.VrSGxrmQoa15m1FUFlbq5bV1hIiKTbOxi6REWUdjd3w",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XSRF-TOKEN",
+                "value": "4c75ca15-c8d1-4367-9167-a1c873f14e43",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"jobId\": 2,\r\n    \"coverLetter\": \"I'm seeking a job\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/users/job-applications/jobseeker",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "users",
+                "job-applications",
+                "jobseeker"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Unapply for a job jobseeker",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJKb2IgUG9ydGFsIiwic3ViIjoiSldUIFRva2VuIiwibmFtZSI6IkpvYiBTZWVrZXIiLCJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwibW9iaWxlTnVtYmVyIjoiMTEyMzQ1Njc4OSIsInJvbGVzIjoiUk9MRV9KT0JfU0VFS0VSIiwiaWF0IjoxNzc0MjEzNDg0LCJleHAiOjE3NzQyOTk4ODR9.VrSGxrmQoa15m1FUFlbq5bV1hIiKTbOxi6REWUdjd3w",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-XSRF-TOKEN",
+                "value": "4c75ca15-c8d1-4367-9167-a1c873f14e43",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/users/job-applications/2/jobseeker",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "users",
+                "job-applications",
+                "2",
+                "jobseeker"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
